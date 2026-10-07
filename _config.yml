@@ -12,8 +12,8 @@ lang: tr
 
 # Sitenin yayınlanacağı adres. Özel alan adı bağlayınca burayı güncelleyin.
 # Örnek: https://www.codnapp.com   (sonunda / olmasın)
-url: "https://KULLANICI-ADI.github.io"
-baseurl: ""
+url: "https://codnapp.github.io"
+baseurl: "/codnapp-site"
 
 # --- İletişim bilgileri (sayfanın iletişim bölümünde ve altbilgide görünür) ---
 # Doldurmadığınız (boş bıraktığınız) alanlar sayfada görünmez.
