@@ -1,0 +1,38 @@
+# ---------------------------------------------------------------
+# Codnapp - site ayarları
+# Değişiklik yaptıktan sonra GitHub Pages siteyi otomatik yeniden derler.
+# ---------------------------------------------------------------
+
+title: Codnapp
+tagline: Endüstriyel işletmeler için MES ve özel yazılım
+description: >-
+  Codnapp, üretim yapan işletmeler için MES (Üretim Yürütme Sistemi) ve
+  projeye özel endüstriyel yazılım geliştirir.
+lang: tr
+
+# Sitenin yayınlanacağı adres. Özel alan adı bağlayınca burayı güncelleyin.
+# Örnek: https://www.codnapp.com   (sonunda / olmasın)
+url: "https://KULLANICI-ADI.github.io"
+baseurl: ""
+
+# --- İletişim bilgileri (sayfanın iletişim bölümünde ve altbilgide görünür) ---
+# Doldurmadığınız (boş bıraktığınız) alanlar sayfada görünmez.
+iletisim:
+  eposta: "info@ornek.com"
+  telefon: "+90 000 000 00 00"
+  adres: "Mahalle, Sokak No, İlçe / İl"
+  harita_baglantisi: ""      # Google Maps "Paylaş" bağlantısını buraya yapıştırın
+  resmi_unvan: "Codnapp Yazılım Ltd. Şti."   # Gerçek unvanınızla değiştirin
+  vergi_dairesi_no: ""       # İsteğe bağlı, örn. "Kadıköy VD / 1234567890"
+
+linkedin: "https://www.linkedin.com/company/codnapp/"
+
+# --- Jekyll ayarları ---
+plugins:
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

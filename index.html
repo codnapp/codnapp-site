@@ -1,0 +1,142 @@
+---
+layout: default
+---
+
+<section class="hero" aria-labelledby="hero-baslik">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <h1 id="hero-baslik">Fabrikanızın sahadaki gerçeğini yazılıma taşıyoruz.</h1>
+      <p class="lead">Codnapp, üretim yapan işletmeler için MES (Üretim Yürütme Sistemi) ve projeye özel endüstriyel yazılım geliştirir. Hangi hattın ne kadar ürettiğini, nerede durduğunu ve nedenini anlık görürsünüz.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#iletisim">Bizimle iletişime geçin</a>
+        <a class="btn btn-ghost" href="#cozum">MES çözümümüz</a>
+      </div>
+    </div>
+
+    <figure class="board" aria-labelledby="board-cap">
+      <div class="board-head">
+        <span class="board-title">Hat 2, Vardiya 1</span>
+        <span class="board-clock" data-clock aria-hidden="true">14:32</span>
+      </div>
+
+      <div class="board-total">
+        <div>
+          <span class="board-label">Üretilen</span>
+          <span class="board-number" data-count="1284">1.284</span>
+        </div>
+        <div>
+          <span class="board-label">Hedef</span>
+          <span class="board-number board-number-dim">1.600</span>
+        </div>
+      </div>
+
+      <ul class="stations">
+        <li class="station" data-state="ok">
+          <span class="station-name">Kesim</span>
+          <span class="station-state"><i class="dot" aria-hidden="true"></i>Çalışıyor</span>
+          <span class="bar" role="img" aria-label="Hedefin yüzde 82'si"><span class="bar-fill" data-fill="82" style="--w:82%"></span></span>
+        </li>
+        <li class="station" data-state="ok">
+          <span class="station-name">Pres</span>
+          <span class="station-state"><i class="dot" aria-hidden="true"></i>Çalışıyor</span>
+          <span class="bar" role="img" aria-label="Hedefin yüzde 78'i"><span class="bar-fill" data-fill="78" style="--w:78%"></span></span>
+        </li>
+        <li class="station" data-state="stop">
+          <span class="station-name">Kaynak</span>
+          <span class="station-state"><i class="dot" aria-hidden="true"></i>Duruş: malzeme bekleniyor</span>
+          <span class="bar" role="img" aria-label="Hedefin yüzde 71'i"><span class="bar-fill" data-fill="71" style="--w:71%"></span></span>
+        </li>
+        <li class="station" data-state="ok">
+          <span class="station-name">Montaj</span>
+          <span class="station-state"><i class="dot" aria-hidden="true"></i>Çalışıyor</span>
+          <span class="bar" role="img" aria-label="Hedefin yüzde 90'ı"><span class="bar-fill" data-fill="90" style="--w:90%"></span></span>
+        </li>
+      </ul>
+
+      <figcaption id="board-cap" class="board-note">Örnek ekran. Gösterilen veriler gerçek değildir.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="cozum" class="section" aria-labelledby="cozum-baslik">
+  <div class="wrap split">
+    <div class="split-head">
+      <h2 id="cozum-baslik">MES çözümü</h2>
+      <p>MES, üretim sahasında olup biteni kâğıttan ve tahminden çıkarıp kayıt altına alan sistemdir. İşletmenizin süreçlerine göre şekillendirir, sahaya uyacak şekilde devreye alırız.</p>
+    </div>
+    <dl class="rows">
+      {% for m in site.data.moduller %}
+      <div class="row">
+        <dt>{{ m.baslik }}</dt>
+        <dd>{{ m.aciklama }}</dd>
+      </div>
+      {% endfor %}
+    </dl>
+  </div>
+</section>
+
+<section id="neden" class="section section-tint" aria-labelledby="neden-baslik">
+  <div class="wrap split">
+    <div class="split-head">
+      <h2 id="neden-baslik">Neden Codnapp</h2>
+      <p>Adımız "code and application" ifadesinden gelir. MES'in yanı sıra yazılım geliştirme ve BT hizmetleri de sunuyoruz.</p>
+    </div>
+    <div class="reasons">
+      <div class="reason">
+        <h3>Sahayı bilen bir ekip</h3>
+        <p>İki kurucu ortağın toplam 26 yıllık tecrübesi var. Üretim sahasının gerçek ihtiyacını, ekranın başındaki operatörün ve müdürün gözünden de görürüz.</p>
+      </div>
+      <div class="reason">
+        <h3>İşletmenize özel geliştirme</h3>
+        <p>Hazır bir kalıba sizi uydurmayız. Süreçlerinizi dinler, yazılımı onlara göre kurarız.</p>
+      </div>
+      <div class="reason">
+        <h3>Doğrudan ortaklarla çalışırsınız</h3>
+        <p>Projenizin başından sonuna kadar karşınızda işi yapan ve karar verebilen kişiler olur.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ekip" class="section" aria-labelledby="ekip-baslik">
+  <div class="wrap split">
+    <div class="split-head">
+      <h2 id="ekip-baslik">Ekip</h2>
+      <p>Codnapp iki ortak tarafından kuruldu ve yönetiliyor.</p>
+    </div>
+    <div class="people">
+      {% for k in site.data.ekip %}
+      <article class="person">
+        <p class="person-years"><span class="person-num">{{ k.yil }}</span> yıl</p>
+        <h3>{{ k.ad }}</h3>
+        <p class="person-role">{{ k.unvan }}</p>
+        <p>{{ k.aciklama }}</p>
+        {% if k.linkedin != "" and k.linkedin %}<p><a href="{{ k.linkedin }}" rel="noopener" target="_blank">LinkedIn profili</a></p>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="iletisim" class="section contact" aria-labelledby="iletisim-baslik">
+  <div class="wrap split">
+    <div class="split-head">
+      <h2 id="iletisim-baslik">İletişim</h2>
+      <p>Üretim sürecinizi ve ihtiyacınızı anlatın, nasıl yardımcı olabileceğimizi birlikte konuşalım.</p>
+    </div>
+    <div class="contact-list">
+      {% if site.iletisim.eposta != "" %}
+      <p class="contact-item"><span class="contact-label">E-posta</span><a href="mailto:{{ site.iletisim.eposta }}">{{ site.iletisim.eposta }}</a></p>
+      {% endif %}
+      {% if site.iletisim.telefon != "" %}
+      <p class="contact-item"><span class="contact-label">Telefon</span><a href="tel:{{ site.iletisim.telefon | remove: ' ' }}">{{ site.iletisim.telefon }}</a></p>
+      {% endif %}
+      {% if site.iletisim.adres != "" %}
+      <p class="contact-item"><span class="contact-label">Adres</span><span>{{ site.iletisim.adres }}{% if site.iletisim.harita_baglantisi != "" %}<br><a href="{{ site.iletisim.harita_baglantisi }}" rel="noopener" target="_blank">Haritada aç</a>{% endif %}</span></p>
+      {% endif %}
+      {% if site.linkedin != "" %}
+      <p class="contact-item"><span class="contact-label">LinkedIn</span><a href="{{ site.linkedin }}" rel="noopener" target="_blank">linkedin.com/company/codnapp</a></p>
+      {% endif %}
+    </div>
+  </div>
+</section>

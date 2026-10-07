@@ -1,0 +1,14 @@
+# MES çözümünüzün kapsamı. Kendi ürününüze göre düzenleyin, ekleyin ya da silin.
+# Yalnızca gerçekten sunduğunuz modülleri bırakın.
+- baslik: İş emri yönetimi
+  aciklama: İş emirlerinin planlanması, sahaya iletilmesi ve durumunun anlık izlenmesi.
+- baslik: Makine ve hat verisi
+  aciklama: Makinelerden üretim verisinin otomatik toplanması; operatörün elle girdiği veriyi azaltır.
+- baslik: Üretim takibi ve duruşlar
+  aciklama: Üretim adetleri, hedefle karşılaştırma ve duruş nedenlerinin kayıt altına alınması.
+- baslik: Kalite ve izlenebilirlik
+  aciklama: Parti ve seri bazlı kayıtlar, hatalı ürünlerin kaynağına kadar izlenmesi.
+- baslik: Raporlama
+  aciklama: Vardiya, hat ve ürün bazında verimlilik raporları ve yönetim özetleri.
+- baslik: Entegrasyon
+  aciklama: ERP ve işletmedeki diğer sistemlerle veri alışverişi.
