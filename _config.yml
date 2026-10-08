@@ -18,11 +18,10 @@ baseurl: "/codnapp-site"
 # --- İletişim bilgileri (sayfanın iletişim bölümünde ve altbilgide görünür) ---
 # Doldurmadığınız (boş bıraktığınız) alanlar sayfada görünmez.
 iletisim:
-  eposta: "info@ornek.com"
-  telefon: "+90 000 000 00 00"
-  adres: "Mahalle, Sokak No, İlçe / İl"
+  eposta: "yasin@codnapp.com"
+  telefon: "+90 545 732 42 08"
   harita_baglantisi: ""      # Google Maps "Paylaş" bağlantısını buraya yapıştırın
-  resmi_unvan: "Codnapp Yazılım Ltd. Şti."   # Gerçek unvanınızla değiştirin
+  resmi_unvan: "Codnapp"   # Gerçek unvanınızla değiştirin
   vergi_dairesi_no: ""       # İsteğe bağlı, örn. "Kadıköy VD / 1234567890"
 
 linkedin: "https://www.linkedin.com/company/codnapp/"

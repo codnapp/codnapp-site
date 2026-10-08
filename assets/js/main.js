@@ -1,6 +1,6 @@
 /* Codnapp - sayfa davranışları:
    1) üst barın kaydırınca gölge alması, 2) mobil menü, 3) aktif bölüm vurgusu,
-   4) hero'daki örnek ekranın tek seferlik açılış hareketi.
+   4) ekran görüntüsü galerisi (oklar ve noktalar).
    JavaScript kapalıysa site yine tam okunur ve çalışır. */
 (function () {
   var header = document.querySelector("[data-header]");
@@ -55,29 +55,55 @@
       if (window.scrollY < 120) links.forEach(function (a) { a.classList.remove("is-active"); });
     }, { passive: true });
   }
+  /* 4) Galeri: oklar, noktalar ve kaydırma durumu */
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var chevL = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var chevR = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  Array.prototype.forEach.call(document.querySelectorAll("[data-carousel]"), function (root) {
+    var track = root.querySelector("[data-track]");
+    if (!track || track.children.length < 2) return;
+    var n = track.children.length, raf = 0, dots = [];
+    root.classList.add("has-ui");
 
-  /* 4) Örnek ekran açılış hareketi (hareket azaltma tercih edilmişse atlanır) */
-  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var board = document.querySelector(".board");
-  var counter = document.querySelector("[data-count]");
-  if (reduce || !board || !counter) return;
-
-  board.classList.add("pre");
-  var target = parseInt(counter.getAttribute("data-count"), 10);
-  var fmt = function (n) { return n.toLocaleString("tr-TR"); };
-  counter.textContent = "0";
-
-  function start() {
-    board.classList.remove("pre");
-    var t0 = null, dur = 1300;
-    function step(ts) {
-      if (t0 === null) t0 = ts;
-      var p = Math.min((ts - t0) / dur, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      counter.textContent = fmt(Math.round(target * eased));
-      if (p < 1) requestAnimationFrame(step);
+    function btn(cls, label, html) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = cls; b.setAttribute("aria-label", label);
+      if (html) b.innerHTML = html;
+      return b;
     }
-    requestAnimationFrame(step);
-  }
-  requestAnimationFrame(function () { requestAnimationFrame(start); });
+    function index() { return Math.round(track.scrollLeft / track.clientWidth); }
+    function go(i) {
+      i = Math.max(0, Math.min(n - 1, i));
+      track.scrollTo({ left: i * track.clientWidth, behavior: reduceMotion ? "auto" : "smooth" });
+    }
+    var prev = btn("carousel-btn carousel-prev", "Önceki ekran", chevL);
+    var next = btn("carousel-btn carousel-next", "Sonraki ekran", chevR);
+    var dotWrap = document.createElement("div");
+    dotWrap.className = "carousel-dots";
+    for (var i = 0; i < n; i++) {
+      (function (k) {
+        var d = btn("carousel-dot", "Ekran " + (k + 1) + " / " + n);
+        d.addEventListener("click", function () { go(k); });
+        dotWrap.appendChild(d); dots.push(d);
+      })(i);
+    }
+    root.appendChild(prev); root.appendChild(next); root.appendChild(dotWrap);
+
+    function update() {
+      var cur = index();
+      dots.forEach(function (d, k) {
+        d.classList.toggle("is-active", k === cur);
+        if (k === cur) d.setAttribute("aria-current", "true"); else d.removeAttribute("aria-current");
+      });
+      prev.disabled = cur === 0; next.disabled = cur === n - 1;
+    }
+    prev.addEventListener("click", function () { go(index() - 1); });
+    next.addEventListener("click", function () { go(index() + 1); });
+    track.addEventListener("scroll", function () {
+      if (raf) return;
+      raf = requestAnimationFrame(function () { raf = 0; update(); });
+    }, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  });
 })();
