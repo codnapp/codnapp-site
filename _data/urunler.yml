@@ -1,0 +1,45 @@
+# Ürünler, sayfada burada yazıldığı sırayla görünür.
+# tip: galeri (kaydırmalı geniş ekran görüntüleri), logo (açık zeminde logo), mobil (yan yana dikey telefon görüntüleri)
+# Tek görsel için "gorsel", birden çok görsel için "gorseller" listesi kullanın.
+- ad: codnapp
+  vurgu: Core
+  aciklama: Mikroservisleri ve ekranları geliştirdiğimiz, yönettiğimiz ve OPC bağlantılarını kurduğumuz çekirdek platform.
+  tip: galeri
+  gorseller:
+    - src: /assets/img/urunler/codnapp-core-1.webp
+      w: 1400
+      h: 794
+      alt: "codnappCore ekranı: hat panosu, OEE göstergeleri, müşteri şikayetleri ve operatör listesi"
+    - src: /assets/img/urunler/codnapp-core-2.webp
+      w: 1400
+      h: 782
+      alt: "codnappCore ekranı: makine panosu, saatlik üretim, duruş ve hurda grafikleri"
+    - src: /assets/img/urunler/codnapp-core-3.webp
+      w: 1400
+      h: 788
+      alt: "codnappCore ekranı: iki makinenin saatlik üretim, OEE ve operatör özeti"
+    - src: /assets/img/urunler/codnapp-core-4.webp
+      w: 1400
+      h: 706
+      alt: "codnappCore yönetim ekranı: cihaz hizmetleri ve tetikleyici tanımı"
+- ad: codnapp
+  vurgu: Connect
+  aciklama: Sahadaki cihazların OPC UA üzerinden bağlanmasını ve entegrasyonunu sağlar.
+  gorsel: /assets/img/urunler/opc-ua.png
+  w: 584
+  h: 114
+  alt: "OPC UA logosu"
+  tip: logo
+- ad: codnapp
+  vurgu: Mobile
+  aciklama: Tüm sahayı mobil cihazlardan izleyebildiğiniz uygulama. iOS ve Android mağazalarında yer alır.
+  tip: mobil
+  gorseller:
+    - src: /assets/img/urunler/codnapp-mobile-1.webp
+      alt: "codnappMobile üretim ekranı: OEE, kullanılabilirlik, performans ve kalite göstergeleri"
+    - src: /assets/img/urunler/codnapp-mobile-2.webp
+      alt: "codnappMobile kalite ekranı: kalite kontrol noktaları ve müşteri şikayetleri tablosu"
+    - src: /assets/img/urunler/codnapp-mobile-3.webp
+      alt: "codnappMobile ana sayfa: iş sağlığı ve güvenliği, kalite ve üretim özeti"
+  w: 480
+  h: 1039

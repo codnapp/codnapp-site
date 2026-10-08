@@ -1,0 +1,36 @@
+# Kullandığımız teknolojiler, sayfada burada yazıldığı sırayla görünür.
+# Logolar tek gri tonda hazırlanmıştır (assets/img/teknolojiler/).
+# Yeni bir teknoloji eklemek için: şeffaf zeminli bir PNG logoyu bu klasöre koyun ve buraya bir satır ekleyin.
+# w = sayfada görünecek genişlik (px), h = yükseklik (px). Logo çok büyük/küçük görünürse w değerini değiştirin.
+- ad: Node.js
+  dosya: nodejs.png
+  w: 117
+  h: 36
+- ad: Docker
+  dosya: docker.png
+  w: 123
+  h: 34
+- ad: SAP ME/MII
+  dosya: sap-me-mii.png
+  w: 132
+  h: 30
+- ad: Microsoft .NET
+  dosya: dotnet.png
+  w: 55
+  h: 54
+- ad: SAP HANA
+  dosya: sap-hana.png
+  w: 120
+  h: 35
+- ad: Microsoft SQL Server
+  dosya: mssql.png
+  w: 69
+  h: 54
+- ad: PostgreSQL
+  dosya: postgresql.png
+  w: 109
+  h: 39
+- ad: OPC UA
+  dosya: opc-ua.png
+  w: 132
+  h: 27

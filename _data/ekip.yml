@@ -1,11 +1,12 @@
 # Kurucu ortaklar. Ad, unvan ve tecrübe metinlerini kendinize göre düzenleyin.
-- ad: "Ortak 1 Adı Soyadı"
+# linkedin: kişisel LinkedIn adresi (boş bırakırsanız simge görünmez)
+- ad: "Orhan SÖNMEZ"
   unvan: Kurucu Ortak
-  yil: 20
-  aciklama: "20 yıllık yazılım ve endüstriyel tecrübe."
-  linkedin: ""    # İsteğe bağlı: kişisel LinkedIn adresi
-- ad: "Ortak 2 Adı Soyadı"
+  yil: "20+"
+  aciklama: "20 yılı aşkın yazılım ve endüstriyel tecrübe."
+  linkedin: "https://www.linkedin.com/in/sonmezorhan"
+- ad: "Yasin KARAGÖZ"
   unvan: Kurucu Ortak
-  yil: 6
-  aciklama: "6 yıllık yazılım ve endüstriyel tecrübe."
-  linkedin: ""
+  yil: "5+"
+  aciklama: "5 yılı aşkın yazılım ve endüstriyel tecrübe."
+  linkedin: "https://www.linkedin.com/in/yasin-karag%C3%B6z/"
