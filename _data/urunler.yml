@@ -20,8 +20,8 @@
       alt: "codnappCore yönetim ekranı: hizmetler ve kod düzenleyici"
     - src: /assets/img/urunler/codnapp-core-2.webp
       w: 1400
-      h: 790
-      alt: "codnappCore ekranı: iki makinenin saatlik üretim, OEE ve operatör özeti"
+      h: 773
+      alt: "codnappCore ekranı: makine panosu, saatlik üretim, duruş ve hurda grafikleri"
     - src: /assets/img/urunler/codnapp-core-3.webp
       w: 1400
       h: 657

@@ -1,10 +1,6 @@
 # Müşteri logoları (sayfada gri tonda görünür).
 # Yeni logo eklemek için: görseli assets/img/musteriler/ klasörüne koyun ve buraya bir satır ekleyin.
 # h = sayfada görünecek yükseklik (px), w = genişlik (px). Logo çok büyük/küçük görünürse h değerini değiştirin.
-- ad: Aromsa
-  dosya: aromsa.png
-  w: 151
-  h: 38
 - ad: Farplas
   dosya: farplas.png
   w: 125
@@ -13,11 +9,15 @@
   dosya: farplas-smart.png
   w: 158
   h: 35
-- ad: Küçükoğlu Holding
-  dosya: kucukoglu.png
-  w: 167
-  h: 33
 - ad: Polibak
   dosya: polibak.png
   w: 121
   h: 47
+- ad: Küçükoğlu Holding
+  dosya: kucukoglu.png
+  w: 167
+  h: 33
+- ad: Aromsa
+  dosya: aromsa.png
+  w: 151
+  h: 38
