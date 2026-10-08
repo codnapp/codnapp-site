@@ -87,7 +87,10 @@
         dotWrap.appendChild(d); dots.push(d);
       })(i);
     }
-    root.appendChild(prev); root.appendChild(next); root.appendChild(dotWrap);
+    var bar = document.createElement("div");
+    bar.className = "carousel-bar";
+    bar.appendChild(prev); bar.appendChild(dotWrap); bar.appendChild(next);
+    root.appendChild(bar);
 
     function update() {
       var cur = index();

@@ -178,23 +178,23 @@ h1{font-size:clamp(2.6rem,5.4vw,4.1rem);line-height:1.02}
 .media{display:grid;place-items:center;aspect-ratio:16/10;padding:clamp(1rem,2.6vw,1.9rem);background:var(--tint);border-radius:var(--radius);overflow:hidden}
 .media img{display:block;max-width:100%;max-height:100%;width:auto;height:auto}
 /* Kaydırmalı galeri (codnappCore) */
-.media-galeri{position:relative;display:block;padding:0}
+.media-galeri{position:relative;display:block;padding:0;aspect-ratio:16/11}
 .carousel-track{position:absolute;inset:0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:thin}
 .has-ui .carousel-track{scrollbar-width:none}
 .has-ui .carousel-track::-webkit-scrollbar{display:none}
 .carousel-track:focus-visible{outline-offset:-4px}
-.slide{margin:0;flex:0 0 100%;height:100%;display:flex;align-items:center;justify-content:center;padding:1.1rem 1.1rem 2.6rem;scroll-snap-align:center;scroll-snap-stop:always}
-.slide img{display:block;min-width:0;min-height:0;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:4px;box-shadow:0 12px 32px rgba(5,41,77,.30)}
-.carousel-btn{position:absolute;top:calc(50% - 14px);transform:translateY(-50%);width:38px;height:38px;display:grid;place-items:center;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.95);color:var(--brand);box-shadow:0 4px 14px rgba(5,41,77,.30);cursor:pointer;transition:background-color .15s ease,color .15s ease,opacity .15s ease}
-.carousel-btn:hover{background:#fff;color:var(--brand-mid)}
-.carousel-btn:disabled{opacity:.35;cursor:default}
-.carousel-prev{left:.6rem}
-.carousel-next{right:.6rem}
-.carousel-dots{position:absolute;left:0;right:0;bottom:.35rem;display:flex;justify-content:center;gap:.1rem}
+.slide{margin:0;flex:0 0 100%;height:100%;display:flex;align-items:center;justify-content:center;padding:1.1rem 1.1rem 3.6rem;scroll-snap-align:center;scroll-snap-stop:always}
+.slide img{display:block;min-width:0;min-height:0;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:6px;background:#fff;box-shadow:0 0 0 1px rgba(5,41,77,.18),0 14px 34px rgba(5,41,77,.22)}
+/* Alt şerit: önceki, noktalar, sonraki (görselin üstüne binmez) */
+.carousel-bar{position:absolute;left:0;right:0;bottom:.7rem;display:flex;align-items:center;justify-content:center;gap:.5rem}
+.carousel-btn{width:34px;height:34px;display:grid;place-items:center;padding:0;border:1px solid var(--line);border-radius:50%;background:#fff;color:var(--brand);cursor:pointer;transition:background-color .15s ease,color .15s ease,border-color .15s ease,opacity .15s ease}
+.carousel-btn:hover:not(:disabled){background:var(--brand);border-color:var(--brand);color:#fff}
+.carousel-btn:disabled{opacity:.4;cursor:default}
+.carousel-dots{display:flex;align-items:center;gap:.05rem}
 .carousel-dot{position:relative;width:24px;height:24px;padding:0;border:0;background:none;cursor:pointer}
 .carousel-dot::before{content:"";position:absolute;inset:7px;border-radius:50%;background:#A9BCD0;transition:background-color .15s ease,transform .15s ease}
 .carousel-dot.is-active::before{background:var(--brand);transform:scale(1.15)}
-.media-logo{background:#fff;border:1px solid var(--line)}
+.media-logo{background:#fff;border:1px solid var(--line);aspect-ratio:16/8}
 .media-logo img{width:min(78%,292px)}
 .media-mobil{aspect-ratio:auto;display:flex;align-items:center;justify-content:center;gap:.9rem}
 .media-mobil img{flex:1 1 0;min-width:0;width:100%;max-width:190px;height:auto;max-height:none;border-radius:16px;box-shadow:0 14px 36px rgba(5,41,77,.28)}
@@ -231,7 +231,7 @@ h1{font-size:clamp(2.6rem,5.4vw,4.1rem);line-height:1.02}
   .split-head p{max-width:34em}
   .product:nth-child(even) .product-text{order:0}
   .media{aspect-ratio:auto}
-  .media-galeri{aspect-ratio:3/2}
+  .media-galeri{aspect-ratio:16/11}
   .media-mobil{justify-content:flex-start;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
   .media-mobil img{flex:none;width:auto;max-width:none;height:400px;scroll-snap-align:center}
   .clients-list{justify-content:flex-start;gap:1.2rem 2rem}
@@ -249,6 +249,8 @@ h1{font-size:clamp(2.6rem,5.4vw,4.1rem);line-height:1.02}
   .nav{gap:1rem 1.25rem}
 }
 @media (max-width:640px){
+  .media-galeri{aspect-ratio:4/3}
+  .slide{padding:.8rem .8rem 3.4rem}
   .tech-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .reason{grid-template-columns:minmax(0,1fr)}
   .people{grid-template-columns:minmax(0,1fr)}
