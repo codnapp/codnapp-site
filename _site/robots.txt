@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://0.0.0.0:4000/codnapp-site/sitemap.xml
+Sitemap: http://0.0.0.0:4000/sitemap.xml

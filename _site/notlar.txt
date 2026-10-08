@@ -1,0 +1,1 @@
+docker run --rm -it -p 4000:4000 -p 35729:35729 -v "${PWD}:/site" -v codnapp-gems:/usr/local/bundle -w /site ruby:3.3 sh -c "bundle install && bundle exec jekyll serve --host 0.0.0.0 --livereload"

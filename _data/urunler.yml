@@ -3,24 +3,24 @@
 # Tek görsel için "gorsel", birden çok görsel için "gorseller" listesi kullanın.
 - ad: codnapp
   vurgu: Core
-  aciklama: Mikroservisleri ve ekranları geliştirdiğimiz, yönettiğimiz ve OPC bağlantılarını kurduğumuz çekirdek platform.
+  aciklama: "Mikroservisleri ve ekranları geliştirdiğimiz, yönettiğimiz ve OPC bağlantılarını kurduğumuz çekirdek platformdur. No-Code ve Low-Code platformların kısıtlamalarına takılmadan süreçlerinizi geliştirebilirsiniz. Bırakın AI platformları kodları sizin için yazsın."
   tip: galeri
   gorseller:
     - src: /assets/img/urunler/codnapp-core-1.webp
       w: 1400
-      h: 794
+      h: 790
       alt: "codnappCore ekranı: hat panosu, OEE göstergeleri, müşteri şikayetleri ve operatör listesi"
     - src: /assets/img/urunler/codnapp-core-2.webp
       w: 1400
-      h: 782
+      h: 773
       alt: "codnappCore ekranı: makine panosu, saatlik üretim, duruş ve hurda grafikleri"
     - src: /assets/img/urunler/codnapp-core-3.webp
       w: 1400
-      h: 788
+      h: 790
       alt: "codnappCore ekranı: iki makinenin saatlik üretim, OEE ve operatör özeti"
     - src: /assets/img/urunler/codnapp-core-4.webp
       w: 1400
-      h: 706
+      h: 704
       alt: "codnappCore yönetim ekranı: cihaz hizmetleri ve tetikleyici tanımı"
 - ad: codnapp
   vurgu: Connect
@@ -32,7 +32,7 @@
   tip: logo
 - ad: codnapp
   vurgu: Mobile
-  aciklama: Tüm sahayı mobil cihazlardan izleyebildiğiniz uygulama. iOS ve Android mağazalarında yer alır.
+  aciklama: "Tüm sahayı mobil cihazlardan izleyebildiğiniz uygulama. Sizin verdiğiniz isimle iOS ve Android mağazalarında yer alır."
   tip: mobil
   gorseller:
     - src: /assets/img/urunler/codnapp-mobile-1.webp
