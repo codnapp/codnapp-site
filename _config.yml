@@ -18,7 +18,7 @@ baseurl: ""
 # --- İletişim bilgileri (sayfanın iletişim bölümünde ve altbilgide görünür) ---
 # Doldurmadığınız (boş bıraktığınız) alanlar sayfada görünmez.
 iletisim:
-  eposta: "yasin@codnapp.com"
+  eposta: "info@codnapp.com"
   telefon: "+90 545 732 42 08"
   harita_baglantisi: ""      # Google Maps "Paylaş" bağlantısını buraya yapıştırın
   resmi_unvan: "Codnapp"   # Gerçek unvanınızla değiştirin
