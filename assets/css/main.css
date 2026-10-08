@@ -166,6 +166,9 @@ h1{font-size:clamp(2.6rem,5.4vw,4.1rem);line-height:1.02}
 .person-links{margin:auto 0 0;padding-top:1rem}
 .icon-link{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:var(--radius);background:var(--brand);color:#fff;transition:background-color .15s ease}
 .icon-link:hover{background:var(--brand-mid)}
+.contact .icon-link{background:var(--sky);color:var(--brand-night)}
+.contact .icon-link:hover{background:#94CBFF;color:var(--brand-night)}
+.contact-item .icon-link{justify-self:start}
 
 /* ---- Ürünler ---- */
 .products{display:grid;gap:clamp(2rem,5vw,3.5rem)}
