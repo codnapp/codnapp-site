@@ -170,11 +170,15 @@ h1{font-size:clamp(2.6rem,5.4vw,4.1rem);line-height:1.02}
 /* ---- Ürünler ---- */
 .products{display:grid;gap:clamp(2rem,5vw,3.5rem)}
 .product{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(1.5rem,5vw,4rem);align-items:center;padding-top:clamp(2rem,5vw,3.5rem);border-top:1px solid var(--line)}
+.product-media{min-width:0}
+.media-note{margin:.7rem 0 0;font-size:.85rem;line-height:1.4;color:var(--muted)}
 .product:first-child{border-top:0;padding-top:0}
 .product:nth-child(even) .product-text{order:2}
 .product-name{font-size:clamp(2.4rem,4.4vw,3.3rem);line-height:1;color:var(--brand);letter-spacing:-.01em;margin-bottom:1rem}
 .product-brand{color:var(--muted);font-weight:600}
 .product-text p{margin:0;max-width:26em;font-size:1.1rem}
+.product-text p + p{margin-top:.85rem}
+.product-text .product-slogan{margin:0 0 .7rem;font-weight:600;font-size:1.2rem;line-height:1.4;color:var(--ink)}
 .media{display:grid;place-items:center;aspect-ratio:16/10;padding:clamp(1rem,2.6vw,1.9rem);background:var(--tint);border-radius:var(--radius);overflow:hidden}
 .media img{display:block;max-width:100%;max-height:100%;width:auto;height:auto}
 /* Kaydırmalı galeri (codnappCore) */

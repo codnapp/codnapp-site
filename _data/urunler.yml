@@ -1,30 +1,38 @@
 # Ürünler, sayfada burada yazıldığı sırayla görünür.
 # tip: galeri (kaydırmalı geniş ekran görüntüleri), logo (açık zeminde logo), mobil (yan yana dikey telefon görüntüleri)
+# dipnot (isteğe bağlı): görsellerin altında küçük yazıyla görünen açıklama.
+# slogan (isteğe bağlı): açıklamanın üstünde vurgulu görünen kısa cümle.
+# Birden çok paragraf için "paragraflar" listesi, tek paragraf için "aciklama" kullanın.
 # Tek görsel için "gorsel", birden çok görsel için "gorseller" listesi kullanın.
 - ad: codnapp
   vurgu: Core
-  aciklama: "Mikroservisleri ve ekranları geliştirdiğimiz, yönettiğimiz ve OPC bağlantılarını kurduğumuz çekirdek platformdur. No-Code ve Low-Code platformların kısıtlamalarına takılmadan süreçlerinizi geliştirebilirsiniz. Bırakın AI platformları kodları sizin için yazsın."
+  slogan: "Mikroservislerinizi, ekranlarınızı ve OPC bağlantılarınızı tek bir çekirdek platform üzerinden geliştirin ve yönetin."
+  paragraflar:
+    - "CodnappCore; mikroservislerin ve kullanıcı arayüzlerinin geliştirildiği, yönetildiği ve endüstriyel sistemlerle OPC bağlantılarının kurulduğu esnek bir uygulama platformudur."
+    - "No-Code ve Low-Code platformların sunduğu hazır yapıların sınırlarına takılmadan, ihtiyacınıza özel süreçler ve uygulamalar geliştirebilirsiniz."
+    - "Üstelik yapay zekâ destekli geliştirme araçlarından yararlanarak kod üretimini hızlandırabilir, geliştirme sürecini daha hızlı ve verimli hâle getirebilirsiniz. Kodunuzu yapay zekâya yazdırın, kontrolü sizde tutun."
   tip: galeri
+  dipnot: "Ekran görüntülerinde temsili veriler kullanılmıştır."
   gorseller:
     - src: /assets/img/urunler/codnapp-core-1.webp
       w: 1400
-      h: 790
-      alt: "codnappCore ekranı: hat panosu, OEE göstergeleri, müşteri şikayetleri ve operatör listesi"
+      h: 707
+      alt: "codnappCore yönetim ekranı: hizmetler ve kod düzenleyici"
     - src: /assets/img/urunler/codnapp-core-2.webp
-      w: 1400
-      h: 773
-      alt: "codnappCore ekranı: makine panosu, saatlik üretim, duruş ve hurda grafikleri"
-    - src: /assets/img/urunler/codnapp-core-3.webp
       w: 1400
       h: 790
       alt: "codnappCore ekranı: iki makinenin saatlik üretim, OEE ve operatör özeti"
+    - src: /assets/img/urunler/codnapp-core-3.webp
+      w: 1400
+      h: 657
+      alt: "codnappCore ekranı: hat panosu, makine hız grafiği, bobin listesi ve sipariş bilgileri"
     - src: /assets/img/urunler/codnapp-core-4.webp
       w: 1400
-      h: 704
-      alt: "codnappCore yönetim ekranı: cihaz hizmetleri ve tetikleyici tanımı"
+      h: 656
+      alt: "codnappCore ekranı: metalize hatları üretim paneli, OEE ve duruş dağılımı"
 - ad: codnapp
   vurgu: Connect
-  aciklama: Sahadaki cihazların OPC UA üzerinden bağlanmasını ve entegrasyonunu sağlar.
+  aciklama: "Sahadaki cihaz ve sistemleri OPC UA üzerinden güvenli ve kesintisiz şekilde bağlayarak, merkezi platformla entegrasyonunu sağlar."
   gorsel: /assets/img/urunler/opc-ua.png
   w: 584
   h: 114
@@ -32,8 +40,10 @@
   tip: logo
 - ad: codnapp
   vurgu: Mobile
-  aciklama: "Tüm sahayı mobil cihazlardan izleyebildiğiniz uygulama. Sizin verdiğiniz isimle iOS ve Android mağazalarında yer alır."
+  slogan: "Üretiminiz her an, her yerde sizinle."
+  aciklama: "Tüm üretim sahanızı mobil cihazlarınızdan anlık olarak izleyin. İşletmenize özel geliştirilen uygulamanız, sizin belirlediğiniz isim ve marka ile iOS ve Android mağazalarında yayınlanır."
   tip: mobil
+  dipnot: "Ekran görüntülerinde temsili veriler kullanılmıştır."
   gorseller:
     - src: /assets/img/urunler/codnapp-mobile-1.webp
       alt: "codnappMobile üretim ekranı: OEE, kullanılabilirlik, performans ve kalite göstergeleri"
