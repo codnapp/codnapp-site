@@ -201,7 +201,7 @@ h1{font-size:clamp(2.6rem,5.4vw,4.1rem);line-height:1.02}
 .carousel-dot{position:relative;width:24px;height:24px;padding:0;border:0;background:none;cursor:pointer}
 .carousel-dot::before{content:"";position:absolute;inset:7px;border-radius:50%;background:#A9BCD0;transition:background-color .15s ease,transform .15s ease}
 .carousel-dot.is-active::before{background:var(--brand);transform:scale(1.15)}
-.media-logo{background:#fff;border:1px solid var(--line);aspect-ratio:16/8}
+.media-logo{background:#fff;border:1px solid var(--line);aspect-ratio:16/6.5}
 .media-logo img{width:min(78%,292px)}
 .media-mobil{aspect-ratio:auto;display:flex;align-items:center;justify-content:center;gap:.9rem}
 .media-mobil img{flex:1 1 0;min-width:0;width:100%;max-width:190px;height:auto;max-height:none;border-radius:16px;box-shadow:0 14px 36px rgba(5,41,77,.28)}
