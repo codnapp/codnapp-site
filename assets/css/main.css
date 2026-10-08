@@ -213,13 +213,13 @@ h1{font-size:clamp(2.6rem,5.4vw,4.1rem);line-height:1.02}
 .tech-grid img{display:block;width:var(--w);max-width:100%;height:auto;opacity:.9}
 
 /* ---- İletişim ---- */
-.contact{position:relative;background:linear-gradient(135deg,var(--brand-deep) 0%,var(--brand) 100%);color:var(--on-dark);border-top:0;overflow:hidden}
+.contact{padding:clamp(2.25rem,5vw,3.25rem) 0;position:relative;background:linear-gradient(135deg,var(--brand-deep) 0%,var(--brand) 100%);color:var(--on-dark);border-top:0;overflow:hidden}
 .contact::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(140,196,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(140,196,255,.08) 1px,transparent 1px);background-size:44px 44px;pointer-events:none}
 .contact .wrap{position:relative}
 .contact h2{color:#fff}
 .contact .split-head p{color:var(--on-dark-muted)}
 .contact a{color:var(--sky)}
-.contact-item{display:grid;grid-template-columns:7rem minmax(0,1fr);gap:.25rem 1rem;margin:0;padding:1.05rem 0;border-top:1px solid var(--dark-line);font-size:1.15rem}
+.contact-item{display:grid;grid-template-columns:7rem minmax(0,1fr);gap:.25rem 1rem;margin:0;padding:.8rem 0;border-top:1px solid var(--dark-line);font-size:1.15rem}
 .contact-item:last-child{border-bottom:1px solid var(--dark-line)}
 .contact-label{color:var(--on-dark-muted);font-size:.95rem;padding-top:.2rem}
 .contact-item a{overflow-wrap:anywhere}
