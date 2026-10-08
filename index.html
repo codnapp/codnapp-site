@@ -42,8 +42,11 @@ layout: default
       <article class="product">
         <div class="product-text">
           <h3 class="product-name"><span class="product-brand">{{ u.ad }}</span>{{ u.vurgu }}</h3>
-          <p>{{ u.aciklama }}</p>
+          {% if u.slogan %}<p class="product-slogan">{{ u.slogan }}</p>{% endif %}
+          {% if u.paragraflar %}{% for t in u.paragraflar %}<p>{{ t }}</p>
+          {% endfor %}{% else %}<p>{{ u.aciklama }}</p>{% endif %}
         </div>
+        <div class="product-media">
         {% if u.tip == "galeri" %}
         <div class="media media-galeri" data-carousel>
           <div class="carousel-track" data-track role="group" aria-roledescription="carousel" aria-label="{{ u.ad }}{{ u.vurgu }} ekran görüntüleri" tabindex="0">
@@ -64,6 +67,8 @@ layout: default
           <img src="{{ u.gorsel | relative_url }}" alt="{{ u.alt }}" width="{{ u.w }}" height="{{ u.h }}" loading="lazy">
         </div>
         {% endif %}
+          {% if u.dipnot %}<p class="media-note">{{ u.dipnot }}</p>{% endif %}
+        </div>
       </article>
       {% endfor %}
     </div>
@@ -107,8 +112,7 @@ layout: default
 <section id="ekip" class="section" aria-labelledby="ekip-baslik">
   <div class="wrap split">
     <div class="split-head">
-      <h2 id="ekip-baslik">Ekip</h2>
-      <p>Kurucu Ortaklar</p>
+      <h2 id="ekip-baslik">Biz</h2>
     </div>
     <div class="people">
       {% for k in site.data.ekip %}
