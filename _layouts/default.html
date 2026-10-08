@@ -6,7 +6,7 @@
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}: {{ site.tagline }}</title>
   <meta name="description" content="{{ page.description | default: site.description | strip_newlines | strip }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
-  <meta name="theme-color" content="#0F2A43">
+  <meta name="theme-color" content="#064984">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="tr_TR">
@@ -14,11 +14,17 @@
   <meta property="og:title" content="{{ site.title }}: {{ site.tagline }}">
   <meta property="og:description" content="{{ site.description | strip_newlines | strip }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/assets/img/og-image.png' | absolute_url }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="64x64" href="{{ '/assets/favicon.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/apple-touch-icon.png' | relative_url }}">
   <link rel="preload" href="{{ '/assets/fonts/barlow-condensed-latin-700-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ '/assets/fonts/ibm-plex-sans-latin-400-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <script>document.documentElement.classList.add("js");</script>
 
   <script type="application/ld+json">
   {
@@ -26,6 +32,7 @@
     "@type": "Organization",
     "name": "{{ site.title }}",
     "url": "{{ site.url }}{{ site.baseurl }}/",
+    "logo": "{{ '/assets/img/logo.png' | absolute_url }}",
     "description": "{{ site.description | strip_newlines | strip }}"{% if site.linkedin != "" %},
     "sameAs": ["{{ site.linkedin }}"]{% endif %}
   }
@@ -34,17 +41,18 @@
 <body>
   <a class="skip" href="#icerik">Ana içeriğe geç</a>
 
-  <header class="site-header">
+  <header class="site-header" data-header>
     <div class="wrap header-row">
       <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} ana sayfa">
-        <svg class="brand-mark" viewBox="0 0 32 32" width="30" height="30" aria-hidden="true" focusable="false">
-          <rect width="32" height="32" rx="4" fill="#F2B705"/>
-          <path d="M9 9l8 7-8 7" fill="none" stroke="#0F2A43" stroke-width="3.2" stroke-linecap="square"/>
-          <path d="M19 23h6" stroke="#0F2A43" stroke-width="3.2" stroke-linecap="square"/>
-        </svg>
-        <span class="brand-name">codnapp</span>
+        <img class="brand-logo" src="{{ '/assets/img/logo.png' | relative_url }}" alt="{{ site.title }}" width="173" height="38">
       </a>
-      <nav class="nav" aria-label="Ana menü">
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="ana-menu" data-nav-toggle>
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="sr-only">Menüyü aç/kapat</span>
+      </button>
+
+      <nav id="ana-menu" class="nav" aria-label="Ana menü" data-nav>
         <a href="#cozum">MES çözümü</a>
         <a href="#neden">Neden Codnapp</a>
         <a href="#ekip">Ekip</a>
@@ -59,7 +67,10 @@
 
   <footer class="site-footer">
     <div class="wrap footer-row">
-      <p>&copy; {{ 'now' | date: '%Y' }} {% if site.iletisim.resmi_unvan != "" %}{{ site.iletisim.resmi_unvan }}{% else %}{{ site.title }}{% endif %}{% if site.iletisim.vergi_dairesi_no != "" %}<br><span class="muted">{{ site.iletisim.vergi_dairesi_no }}</span>{% endif %}</p>
+      <div>
+        <img class="footer-logo" src="{{ '/assets/img/logo-white.png' | relative_url }}" alt="{{ site.title }}" width="140" height="31" loading="lazy">
+        <p>&copy; {{ 'now' | date: '%Y' }} {% if site.iletisim.resmi_unvan != "" %}{{ site.iletisim.resmi_unvan }}{% else %}{{ site.title }}{% endif %}{% if site.iletisim.vergi_dairesi_no != "" %}<br><span class="muted">{{ site.iletisim.vergi_dairesi_no }}</span>{% endif %}</p>
+      </div>
       {% if site.linkedin != "" %}<p><a href="{{ site.linkedin }}" rel="noopener" target="_blank">LinkedIn sayfamız</a></p>{% endif %}
     </div>
   </footer>
