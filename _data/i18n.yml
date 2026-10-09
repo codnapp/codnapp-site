@@ -1,0 +1,82 @@
+# Sitedeki tüm sabit metinlerin Türkçe (tr) ve İngilizce (en) karşılıkları.
+# Bir metni değiştirmek için ilgili dilin altındaki satırı düzenleyin.
+# ids: sayfadaki bölümlerin adresleri (örn. /#urunler). Dil değiştirince konum korunur.
+tr:
+  locale: tr_TR
+  ids: { products: urunler, why: neden, about: ekip, contact: iletisim }
+  meta:
+    tagline: "Endüstriyel işletmeler için MES ve özel yazılım"
+    description: "Codnapp, üretim sahasından gelen verileri anlamlı ve kullanılabilir bilgilere dönüştüren MES ve endüstriyel yazılım çözümleri geliştirir."
+  skip: "Ana içeriğe geç"
+  home_aria: "Codnapp ana sayfa"
+  menu_toggle: "Menüyü aç/kapat"
+  nav: { aria: "Ana menü", products: "Ürünler", why: "Neden Codnapp", about: "Biz", contact: "İletişim" }
+  lang_label: "Dil seçimi"
+  hero:
+    h1_a: "Sahadan veriye."
+    h1_b: "Veriden karara."
+    lead: "Codnapp, üretim sahasından gelen verileri anlamlı ve kullanılabilir bilgilere dönüştüren MES ve endüstriyel yazılım çözümleri geliştirir."
+    cta_contact: "Bizimle iletişime geçin"
+    cta_products: "Ürünlerimiz"
+    shot_alt: "AMR yönetim sistemi ekranı: robotların anlık durumu, görev listesi ve saatlik görev dağılımı"
+    shot_open: "Ekran görüntüsünü tam boyutta aç"
+  clients_title: "Müşterilerimiz"
+  products_title: "Ürünler"
+  tech_title: "Kullandığımız teknolojiler"
+  screenshots: "ekran görüntüleri"
+  gallery: { prev: "Önceki ekran", next: "Sonraki ekran", dot: "Ekran %n / %t" }
+  why:
+    title: "Neden Codnapp?"
+    intro: "Adımız, “Code and Application” ifadesinden geliyor. “Code”, teknik uzmanlığımızı; “Application” ise bu uzmanlığı gerçek iş süreçlerine ve uygulamalara dönüştürme becerimizi temsil ediyor. MES çözümlerinin yanı sıra, işletmelerin ihtiyaçlarına özel yazılım geliştirme hizmetleri de sunuyoruz."
+    reasons:
+      - { title: "Sahayı Bilen Bir Ekip", text: "İki kurucu ortağımızın toplam 25 yılı aşkın sektör ve proje deneyimi bulunuyor. Üretim sahasının gerçek ihtiyaçlarını biliyor; süreçlere hem operasyonun başındaki çalışanların hem de karar verici yöneticilerin gözünden bakıyoruz." }
+      - { title: "İşletmenize Özel Çözümler", text: "Her işletmenin süreçleri ve ihtiyaçları farklıdır. Sizi hazır bir yazılımın sınırlarına uyum sağlamaya zorlamıyoruz. Önce iş süreçlerinizi ve ihtiyaçlarınızı anlıyor, ardından yazılımı işletmenize göre şekillendiriyoruz." }
+      - { title: "Doğrudan Kurucularla Çalışırsınız", text: "Projenizin başından sonuna kadar, işi gerçekten yapan ve karar alma yetkisine sahip kurucu ortaklarla doğrudan iletişim kurarsınız. Böylece iletişim zinciri kısalır, kararlar hızlanır ve projeniz daha etkin ilerler." }
+  about: { title: "Biz", years: "yıl", linkedin_profile: "LinkedIn profili" }
+  contact:
+    title: "İletişim"
+    intro: "Üretim sürecinizi ve ihtiyacınızı anlatın, nasıl yardımcı olabileceğimizi birlikte konuşalım."
+    email: "E-posta"
+    phone: "Telefon"
+    linkedin: "LinkedIn"
+    linkedin_aria: "Codnapp LinkedIn sayfası"
+
+en:
+  locale: en_US
+  ids: { products: products, why: why-codnapp, about: about, contact: contact }
+  meta:
+    tagline: "MES and custom software for industrial businesses"
+    description: "Codnapp develops MES and industrial software solutions that turn data from the production floor into meaningful, actionable information."
+  skip: "Skip to main content"
+  home_aria: "Codnapp home"
+  menu_toggle: "Toggle menu"
+  nav: { aria: "Main menu", products: "Products", why: "Why Codnapp", about: "About Us", contact: "Contact" }
+  lang_label: "Language"
+  hero:
+    h1_a: "Shop floor to data."
+    h1_b: "Data to decisions."
+    lead: "Codnapp develops MES and industrial software solutions that turn data from the production floor into meaningful, actionable information."
+    cta_contact: "Contact us"
+    cta_products: "Our products"
+    shot_alt: "AMR management system screen: live robot status, task list and hourly task distribution"
+    shot_open: "Open the screenshot in full size"
+  clients_title: "Our customers"
+  products_title: "Products"
+  tech_title: "Technologies we use"
+  screenshots: "screenshots"
+  gallery: { prev: "Previous screenshot", next: "Next screenshot", dot: "Screenshot %n of %t" }
+  why:
+    title: "Why Codnapp?"
+    intro: "Our name comes from “Code and Application.” “Code” stands for our technical expertise; “Application” stands for our ability to turn that expertise into real business processes and applications. In addition to MES solutions, we provide custom software development services tailored to each business’s needs."
+    reasons:
+      - { title: "A Team That Knows the Shop Floor", text: "Our two founders bring more than 25 years of combined industry and project experience. We understand the real needs of the production floor and look at processes through the eyes of both the people running operations and the managers making decisions." }
+      - { title: "Solutions Built for Your Business", text: "Every business has different processes and needs. We don’t force you to adapt to the limits of off-the-shelf software. We first understand your processes and requirements, then shape the software around your business." }
+      - { title: "You Work Directly with the Founders", text: "From start to finish, you communicate directly with the founding partners who do the work and have the authority to make decisions. This shortens the chain of communication, speeds up decisions and keeps your project moving efficiently." }
+  about: { title: "About Us", years: "years", linkedin_profile: "LinkedIn profile" }
+  contact:
+    title: "Contact"
+    intro: "Tell us about your production process and needs, and let’s discuss how we can help."
+    email: "Email"
+    phone: "Phone"
+    linkedin: "LinkedIn"
+    linkedin_aria: "Codnapp on LinkedIn"

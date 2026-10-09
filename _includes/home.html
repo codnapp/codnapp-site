@@ -1,0 +1,153 @@
+{% comment %}
+  Ana sayfa içeriği. Hem Türkçe (index.html) hem İngilizce (en/index.html) sayfa bunu kullanır.
+  Metinler _data/i18n.yml, ürünler _data/urunler*.yml, kurucular _data/ekip*.yml dosyalarından gelir.
+{% endcomment %}
+{% assign lang = page.lang | default: "tr" %}
+{% assign tx = site.data.i18n[lang] %}
+{% if lang == "en" %}
+  {% assign urunler = site.data.urunler_en %}
+  {% assign ekip = site.data.ekip_en %}
+{% else %}
+  {% assign urunler = site.data.urunler %}
+  {% assign ekip = site.data.ekip %}
+{% endif %}
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <h1 id="hero-title">{{ tx.hero.h1_a }}<br>{{ tx.hero.h1_b }}</h1>
+      <p class="lead">{{ tx.hero.lead }}</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#{{ tx.ids.contact }}">{{ tx.hero.cta_contact }}</a>
+        <a class="btn btn-ghost" href="#{{ tx.ids.products }}">{{ tx.hero.cta_products }}</a>
+      </div>
+    </div>
+
+    <figure class="shot">
+      <a href="{{ '/assets/img/urunler/andon.webp' | relative_url }}" target="_blank" rel="noopener" aria-label="{{ tx.hero.shot_open }}">
+        <img src="{{ '/assets/img/urunler/andon.webp' | relative_url }}" width="1600" height="816" fetchpriority="high"
+             alt="{{ tx.hero.shot_alt }}">
+      </a>
+    </figure>
+  </div>
+</section>
+
+<section class="clients" aria-labelledby="clients-title">
+  <div class="wrap clients-row">
+    <h2 id="clients-title" class="sr-only">{{ tx.clients_title }}</h2>
+    <ul class="clients-list">
+      {% for m in site.data.musteriler %}
+      <li><img src="{{ '/assets/img/musteriler/' | append: m.dosya | relative_url }}" alt="{{ m.ad }}" width="{{ m.w }}" height="{{ m.h }}" style="--h:{{ m.h }}px" loading="lazy"></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section id="{{ tx.ids.products }}" class="section" aria-labelledby="products-title">
+  <div class="wrap">
+    <h2 id="products-title" class="sr-only">{{ tx.products_title }}</h2>
+
+    <div class="products">
+      {% for u in urunler %}
+      <article class="product">
+        <div class="product-text">
+          <h3 class="product-name"><span class="product-brand">{{ u.ad }}</span>{{ u.vurgu }}</h3>
+          {% if u.slogan %}<p class="product-slogan">{{ u.slogan }}</p>{% endif %}
+          {% if u.paragraflar %}{% for par in u.paragraflar %}<p>{{ par }}</p>
+          {% endfor %}{% else %}<p>{{ u.aciklama }}</p>{% endif %}
+        </div>
+        <div class="product-media">
+        {% if u.tip == "galeri" %}
+        <div class="media media-galeri" data-carousel data-label-prev="{{ tx.gallery.prev }}" data-label-next="{{ tx.gallery.next }}" data-label-dot="{{ tx.gallery.dot }}">
+          <div class="carousel-track" data-track role="group" aria-roledescription="carousel" aria-label="{{ u.ad }}{{ u.vurgu }} {{ tx.screenshots }}" tabindex="0">
+            {% for g in u.gorseller %}
+            <figure class="slide" role="group" aria-roledescription="slide" aria-label="{{ forloop.index }} / {{ forloop.length }}">
+              <img src="{{ g.src | relative_url }}" alt="{{ g.alt }}" width="{{ g.w }}" height="{{ g.h }}" loading="lazy">
+            </figure>
+            {% endfor %}
+          </div>
+        </div>
+        {% elsif u.gorseller %}
+        <div class="media media-{{ u.tip }}" role="group" tabindex="0" aria-label="{{ u.ad }}{{ u.vurgu }} {{ tx.screenshots }}">
+          {% for g in u.gorseller %}<img src="{{ g.src | relative_url }}" alt="{{ g.alt }}" width="{{ u.w }}" height="{{ u.h }}" loading="lazy">
+          {% endfor %}
+        </div>
+        {% else %}
+        <div class="media media-{{ u.tip }}">
+          <img src="{{ u.gorsel | relative_url }}" alt="{{ u.alt }}" width="{{ u.w }}" height="{{ u.h }}" loading="lazy">
+        </div>
+        {% endif %}
+          {% if u.dipnot %}<p class="media-note">{{ u.dipnot }}</p>{% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section tech" aria-labelledby="tech-title">
+  <div class="wrap">
+    <h2 id="tech-title" class="sr-only">{{ tx.tech_title }}</h2>
+    <ul class="tech-grid">
+      {% for tech in site.data.teknolojiler %}
+      <li><img src="{{ '/assets/img/teknolojiler/' | append: tech.dosya | relative_url }}" alt="{{ tech.ad }}" width="{{ tech.w }}" height="{{ tech.h }}" style="--w:{{ tech.w }}px" loading="lazy"></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section id="{{ tx.ids.why }}" class="section section-tint" aria-labelledby="why-title">
+  <div class="wrap split">
+    <div class="split-head">
+      <h2 id="why-title">{{ tx.why.title }}</h2>
+      <p>{{ tx.why.intro }}</p>
+    </div>
+    <div class="reasons">
+      {% for r in tx.why.reasons %}
+      <div class="reason">
+        <h3>{{ r.title }}</h3>
+        <p>{{ r.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="{{ tx.ids.about }}" class="section" aria-labelledby="about-title">
+  <div class="wrap split">
+    <div class="split-head">
+      <h2 id="about-title">{{ tx.about.title }}</h2>
+    </div>
+    <div class="people">
+      {% for k in ekip %}
+      <article class="person">
+        <p class="person-years"><span class="person-num">{{ k.yil }}</span> {{ tx.about.years }}</p>
+        <h3>{{ k.ad }}</h3>
+        <p class="person-role">{{ k.unvan }}</p>
+        <p>{{ k.aciklama }}</p>
+        {% if k.linkedin != "" and k.linkedin %}<p class="person-links"><a class="icon-link" href="{{ k.linkedin }}" rel="noopener" target="_blank" aria-label="{{ k.ad }} {{ tx.about.linkedin_profile }}"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></p>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="{{ tx.ids.contact }}" class="section contact" aria-labelledby="contact-title">
+  <div class="wrap split">
+    <div class="split-head">
+      <h2 id="contact-title">{{ tx.contact.title }}</h2>
+      <p>{{ tx.contact.intro }}</p>
+    </div>
+    <div class="contact-list">
+      {% if site.iletisim.eposta != "" %}
+      <p class="contact-item"><span class="contact-label">{{ tx.contact.email }}</span><a href="mailto:{{ site.iletisim.eposta }}">{{ site.iletisim.eposta }}</a></p>
+      {% endif %}
+      {% if site.iletisim.telefon != "" %}
+      <p class="contact-item"><span class="contact-label">{{ tx.contact.phone }}</span><a href="tel:{{ site.iletisim.telefon | remove: ' ' }}">{{ site.iletisim.telefon }}</a></p>
+      {% endif %}
+      {% if site.linkedin != "" %}
+      <p class="contact-item"><span class="contact-label">{{ tx.contact.linkedin }}</span><a class="icon-link" href="{{ site.linkedin }}" rel="noopener" target="_blank" aria-label="{{ tx.contact.linkedin_aria }}"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></p>
+      {% endif %}
+    </div>
+  </div>
+</section>

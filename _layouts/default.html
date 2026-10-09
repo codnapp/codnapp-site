@@ -1,18 +1,29 @@
+{% assign lang = page.lang | default: "tr" %}
+{% assign tx = site.data.i18n[lang] %}
+{% assign ids_tr = site.data.i18n.tr.ids %}
+{% assign ids_en = site.data.i18n.en.ids %}
+{% if lang == "en" %}{% assign home_url = '/en/' | relative_url %}{% else %}{% assign home_url = '/' | relative_url %}{% endif %}
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: 'tr' }}">
+<html lang="{{ lang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{{ page.description | default: site.description | strip_newlines | strip }}">
+  <meta name="description" content="{{ page.description | default: tx.meta.description | strip_newlines | strip }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
+  {% if page.url == "/" or page.url == "/en/" %}
+  <link rel="alternate" hreflang="tr" href="{{ '/' | absolute_url }}">
+  <link rel="alternate" hreflang="en" href="{{ '/en/' | absolute_url }}">
+  <link rel="alternate" hreflang="x-default" href="{{ '/' | absolute_url }}">
+  {% endif %}
   <meta name="theme-color" content="#064984">
 
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="tr_TR">
+  <meta property="og:locale" content="{{ tx.locale }}">
+  <meta property="og:locale:alternate" content="{% if lang == 'en' %}tr_TR{% else %}en_US{% endif %}">
   <meta property="og:site_name" content="{{ site.title }}">
-  <meta property="og:title" content="{{ site.title }}: {{ site.tagline }}">
-  <meta property="og:description" content="{{ site.description | strip_newlines | strip }}">
+  <meta property="og:title" content="{{ site.title }}: {{ tx.meta.tagline }}">
+  <meta property="og:description" content="{{ tx.meta.description | strip_newlines | strip }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:image" content="{{ '/assets/img/og-image.png' | absolute_url }}">
   <meta property="og:image:width" content="1200">
@@ -33,35 +44,42 @@
     "name": "{{ site.title }}",
     "url": "{{ site.url }}{{ site.baseurl }}/",
     "logo": "{{ '/assets/img/logo.png' | absolute_url }}",
-    "description": "{{ site.description | strip_newlines | strip }}"{% if site.linkedin != "" %},
+    "description": "{{ tx.meta.description | strip_newlines | strip }}"{% if site.linkedin != "" %},
     "sameAs": ["{{ site.linkedin }}"]{% endif %}
   }
   </script>
 </head>
 <body>
-  <a class="skip" href="#icerik">Ana içeriğe geç</a>
+  <a class="skip" href="#main-content">{{ tx.skip }}</a>
 
   <header class="site-header" data-header>
     <div class="wrap header-row">
-      <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} ana sayfa">
+      <a class="brand" href="{{ home_url }}" aria-label="{{ tx.home_aria }}">
         <img class="brand-logo" src="{{ '/assets/img/logo.png' | relative_url }}" alt="{{ site.title }}" width="173" height="38">
       </a>
 
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="ana-menu" data-nav-toggle>
-        <span class="nav-toggle-bars" aria-hidden="true"></span>
-        <span class="sr-only">Menüyü aç/kapat</span>
-      </button>
-
-      <nav id="ana-menu" class="nav" aria-label="Ana menü" data-nav>
-        <a href="#urunler">Ürünler</a>
-        <a href="#neden">Neden Codnapp</a>
-        <a href="#ekip">Biz</a>
-        <a class="nav-cta" href="#iletisim">İletişim</a>
+      <nav id="main-menu" class="nav" aria-label="{{ tx.nav.aria }}" data-nav>
+        <a href="#{{ tx.ids.products }}">{{ tx.nav.products }}</a>
+        <a href="#{{ tx.ids.why }}">{{ tx.nav.why }}</a>
+        <a href="#{{ tx.ids.about }}">{{ tx.nav.about }}</a>
+        <a class="nav-cta" href="#{{ tx.ids.contact }}">{{ tx.nav.contact }}</a>
       </nav>
+
+      <div class="lang-switch" role="group" aria-label="{{ tx.lang_label }}" data-lang-switch
+           data-ids-tr="{{ ids_tr.products }},{{ ids_tr.why }},{{ ids_tr.about }},{{ ids_tr.contact }}"
+           data-ids-en="{{ ids_en.products }},{{ ids_en.why }},{{ ids_en.about }},{{ ids_en.contact }}">
+        <a href="{{ '/' | relative_url }}" lang="tr" hreflang="tr" data-lang="tr" title="Türkçe" aria-label="Türkçe"{% if lang == "tr" %} aria-current="true"{% endif %}>TR</a>
+        <a href="{{ '/en/' | relative_url }}" lang="en" hreflang="en" data-lang="en" title="English" aria-label="English"{% if lang == "en" %} aria-current="true"{% endif %}>EN</a>
+      </div>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-menu" data-nav-toggle>
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="sr-only">{{ tx.menu_toggle }}</span>
+      </button>
     </div>
   </header>
 
-  <main id="icerik">
+  <main id="main-content">
     {{ content }}
   </main>
 

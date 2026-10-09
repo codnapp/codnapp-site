@@ -1,18 +1,29 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Codnapp</title>
-  <meta name="description" content="Codnapp, üretim yapan işletmeler için MES (Üretim Yürütme Sistemi) ve projeye özel endüstriyel yazılım geliştirir.">
+  <meta name="description" content="Codnapp, üretim sahasından gelen verileri anlamlı ve kullanılabilir bilgilere dönüştüren MES ve endüstriyel yazılım çözümleri geliştirir.">
   <link rel="canonical" href="http://0.0.0.0:4000/">
+  
+  <link rel="alternate" hreflang="tr" href="http://0.0.0.0:4000/">
+  <link rel="alternate" hreflang="en" href="http://0.0.0.0:4000/en/">
+  <link rel="alternate" hreflang="x-default" href="http://0.0.0.0:4000/">
+  
   <meta name="theme-color" content="#064984">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="tr_TR">
+  <meta property="og:locale:alternate" content="en_US">
   <meta property="og:site_name" content="Codnapp">
   <meta property="og:title" content="Codnapp: Endüstriyel işletmeler için MES ve özel yazılım">
-  <meta property="og:description" content="Codnapp, üretim yapan işletmeler için MES (Üretim Yürütme Sistemi) ve projeye özel endüstriyel yazılım geliştirir.">
+  <meta property="og:description" content="Codnapp, üretim sahasından gelen verileri anlamlı ve kullanılabilir bilgilere dönüştüren MES ve endüstriyel yazılım çözümleri geliştirir.">
   <meta property="og:url" content="http://0.0.0.0:4000/">
   <meta property="og:image" content="http://0.0.0.0:4000/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -33,13 +44,13 @@
     "name": "Codnapp",
     "url": "http://0.0.0.0:4000/",
     "logo": "http://0.0.0.0:4000/assets/img/logo.png",
-    "description": "Codnapp, üretim yapan işletmeler için MES (Üretim Yürütme Sistemi) ve projeye özel endüstriyel yazılım geliştirir.",
+    "description": "Codnapp, üretim sahasından gelen verileri anlamlı ve kullanılabilir bilgilere dönüştüren MES ve endüstriyel yazılım çözümleri geliştirir.",
     "sameAs": ["https://www.linkedin.com/company/codnapp/"]
   }
   </script>
 </head>
 <body>
-  <a class="skip" href="#icerik">Ana içeriğe geç</a>
+  <a class="skip" href="#main-content">Ana içeriğe geç</a>
 
   <header class="site-header" data-header>
     <div class="wrap header-row">
@@ -47,25 +58,37 @@
         <img class="brand-logo" src="/assets/img/logo.png" alt="Codnapp" width="173" height="38">
       </a>
 
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="ana-menu" data-nav-toggle>
-        <span class="nav-toggle-bars" aria-hidden="true"></span>
-        <span class="sr-only">Menüyü aç/kapat</span>
-      </button>
-
-      <nav id="ana-menu" class="nav" aria-label="Ana menü" data-nav>
+      <nav id="main-menu" class="nav" aria-label="Ana menü" data-nav>
         <a href="#urunler">Ürünler</a>
         <a href="#neden">Neden Codnapp</a>
         <a href="#ekip">Biz</a>
         <a class="nav-cta" href="#iletisim">İletişim</a>
       </nav>
+
+      <div class="lang-switch" role="group" aria-label="Dil seçimi" data-lang-switch
+           data-ids-tr="urunler,neden,ekip,iletisim"
+           data-ids-en="products,why-codnapp,about,contact">
+        <a href="/" lang="tr" hreflang="tr" data-lang="tr" title="Türkçe" aria-label="Türkçe" aria-current="true">TR</a>
+        <a href="/en/" lang="en" hreflang="en" data-lang="en" title="English" aria-label="English">EN</a>
+      </div>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-menu" data-nav-toggle>
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="sr-only">Menüyü aç/kapat</span>
+      </button>
     </div>
   </header>
 
-  <main id="icerik">
-    <section class="hero" aria-labelledby="hero-baslik">
+  <main id="main-content">
+    
+
+
+
+
+<section class="hero" aria-labelledby="hero-title">
   <div class="wrap hero-grid">
     <div class="hero-text">
-      <h1 id="hero-baslik">Sahadan veriye.<br>Veriden karara.</h1>
+      <h1 id="hero-title">Sahadan veriye.<br>Veriden karara.</h1>
       <p class="lead">Codnapp, üretim sahasından gelen verileri anlamlı ve kullanılabilir bilgilere dönüştüren MES ve endüstriyel yazılım çözümleri geliştirir.</p>
       <div class="actions">
         <a class="btn btn-primary" href="#iletisim">Bizimle iletişime geçin</a>
@@ -82,9 +105,9 @@
   </div>
 </section>
 
-<section class="clients" aria-labelledby="musteri-baslik">
+<section class="clients" aria-labelledby="clients-title">
   <div class="wrap clients-row">
-    <h2 id="musteri-baslik" class="sr-only">Müşterilerimiz</h2>
+    <h2 id="clients-title" class="sr-only">Müşterilerimiz</h2>
     <ul class="clients-list">
       
       <li><img src="/assets/img/musteriler/farplas.png" alt="Farplas" width="125" height="44" style="--h:44px" loading="lazy"></li>
@@ -101,9 +124,9 @@
   </div>
 </section>
 
-<section id="urunler" class="section" aria-labelledby="urunler-baslik">
+<section id="urunler" class="section" aria-labelledby="products-title">
   <div class="wrap">
-    <h2 id="urunler-baslik" class="sr-only">Ürünler</h2>
+    <h2 id="products-title" class="sr-only">Ürünler</h2>
 
     <div class="products">
       
@@ -113,12 +136,12 @@
           <p class="product-slogan">Mikroservislerinizi, ekranlarınızı ve OPC bağlantılarınızı tek bir çekirdek platform üzerinden geliştirin ve yönetin.</p>
           <p>CodnappCore; mikroservislerin ve kullanıcı arayüzlerinin geliştirildiği, yönetildiği ve endüstriyel sistemlerle OPC bağlantılarının kurulduğu esnek bir uygulama platformudur.</p>
           <p>No-Code ve Low-Code platformların sunduğu hazır yapıların sınırlarına takılmadan, ihtiyacınıza özel süreçler ve uygulamalar geliştirebilirsiniz.</p>
-          <p>Üstelik yapay zekâ destekli geliştirme araçlarından yararlanarak kod üretimini hızlandırabilir, geliştirme sürecini daha hızlı ve verimli hâle getirebilirsiniz. Kodunuzu yapay zekâya yazdırın, kontrolü sizde tutun.</p>
+          <p>Üstelik yapay zekâ destekli geliştirme araçlarından yararlanarak kod üretimini hızlandırabilir, geliştirme sürecini daha hızlı ve verimli hâle getirebilirsiniz. Kodunuzu yapay zekâya yazdırın, kontrolü elinizde tutun.</p>
           
         </div>
         <div class="product-media">
         
-        <div class="media media-galeri" data-carousel>
+        <div class="media media-galeri" data-carousel data-label-prev="Önceki ekran" data-label-next="Sonraki ekran" data-label-dot="Ekran %n / %t">
           <div class="carousel-track" data-track role="group" aria-roledescription="carousel" aria-label="codnappCore ekran görüntüleri" tabindex="0">
             
             <figure class="slide" role="group" aria-roledescription="slide" aria-label="1 / 4">
@@ -183,9 +206,9 @@
   </div>
 </section>
 
-<section class="section tech" aria-labelledby="teknoloji-baslik">
+<section class="section tech" aria-labelledby="tech-title">
   <div class="wrap">
-    <h2 id="teknoloji-baslik" class="sr-only">Kullandığımız teknolojiler</h2>
+    <h2 id="tech-title" class="sr-only">Kullandığımız teknolojiler</h2>
     <ul class="tech-grid">
       
       <li><img src="/assets/img/teknolojiler/nodejs.png" alt="Node.js" width="117" height="36" style="--w:117px" loading="lazy"></li>
@@ -208,33 +231,37 @@
   </div>
 </section>
 
-<section id="neden" class="section section-tint" aria-labelledby="neden-baslik">
+<section id="neden" class="section section-tint" aria-labelledby="why-title">
   <div class="wrap split">
     <div class="split-head">
-      <h2 id="neden-baslik">Neden Codnapp?</h2>
+      <h2 id="why-title">Neden Codnapp?</h2>
       <p>Adımız, “Code and Application” ifadesinden geliyor. “Code”, teknik uzmanlığımızı; “Application” ise bu uzmanlığı gerçek iş süreçlerine ve uygulamalara dönüştürme becerimizi temsil ediyor. MES çözümlerinin yanı sıra, işletmelerin ihtiyaçlarına özel yazılım geliştirme hizmetleri de sunuyoruz.</p>
     </div>
     <div class="reasons">
+      
       <div class="reason">
         <h3>Sahayı Bilen Bir Ekip</h3>
         <p>İki kurucu ortağımızın toplam 25 yılı aşkın sektör ve proje deneyimi bulunuyor. Üretim sahasının gerçek ihtiyaçlarını biliyor; süreçlere hem operasyonun başındaki çalışanların hem de karar verici yöneticilerin gözünden bakıyoruz.</p>
       </div>
+      
       <div class="reason">
         <h3>İşletmenize Özel Çözümler</h3>
         <p>Her işletmenin süreçleri ve ihtiyaçları farklıdır. Sizi hazır bir yazılımın sınırlarına uyum sağlamaya zorlamıyoruz. Önce iş süreçlerinizi ve ihtiyaçlarınızı anlıyor, ardından yazılımı işletmenize göre şekillendiriyoruz.</p>
       </div>
+      
       <div class="reason">
         <h3>Doğrudan Kurucularla Çalışırsınız</h3>
         <p>Projenizin başından sonuna kadar, işi gerçekten yapan ve karar alma yetkisine sahip kurucu ortaklarla doğrudan iletişim kurarsınız. Böylece iletişim zinciri kısalır, kararlar hızlanır ve projeniz daha etkin ilerler.</p>
       </div>
+      
     </div>
   </div>
 </section>
 
-<section id="ekip" class="section" aria-labelledby="ekip-baslik">
+<section id="ekip" class="section" aria-labelledby="about-title">
   <div class="wrap split">
     <div class="split-head">
-      <h2 id="ekip-baslik">Biz</h2>
+      <h2 id="about-title">Biz</h2>
     </div>
     <div class="people">
       
@@ -258,10 +285,10 @@
   </div>
 </section>
 
-<section id="iletisim" class="section contact" aria-labelledby="iletisim-baslik">
+<section id="iletisim" class="section contact" aria-labelledby="contact-title">
   <div class="wrap split">
     <div class="split-head">
-      <h2 id="iletisim-baslik">İletişim</h2>
+      <h2 id="contact-title">İletişim</h2>
       <p>Üretim sürecinizi ve ihtiyacınızı anlatın, nasıl yardımcı olabileceğimizi birlikte konuşalım.</p>
     </div>
     <div class="contact-list">
@@ -277,6 +304,7 @@
     </div>
   </div>
 </section>
+
 
   </main>
 

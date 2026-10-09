@@ -1,18 +1,25 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sayfa bulunamadı | Codnapp</title>
-  <meta name="description" content="Codnapp, üretim yapan işletmeler için MES (Üretim Yürütme Sistemi) ve projeye özel endüstriyel yazılım geliştirir.">
+  <title>404 | Codnapp</title>
+  <meta name="description" content="Codnapp, üretim sahasından gelen verileri anlamlı ve kullanılabilir bilgilere dönüştüren MES ve endüstriyel yazılım çözümleri geliştirir.">
   <link rel="canonical" href="http://0.0.0.0:4000/404.html">
+  
   <meta name="theme-color" content="#064984">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="tr_TR">
+  <meta property="og:locale:alternate" content="en_US">
   <meta property="og:site_name" content="Codnapp">
   <meta property="og:title" content="Codnapp: Endüstriyel işletmeler için MES ve özel yazılım">
-  <meta property="og:description" content="Codnapp, üretim yapan işletmeler için MES (Üretim Yürütme Sistemi) ve projeye özel endüstriyel yazılım geliştirir.">
+  <meta property="og:description" content="Codnapp, üretim sahasından gelen verileri anlamlı ve kullanılabilir bilgilere dönüştüren MES ve endüstriyel yazılım çözümleri geliştirir.">
   <meta property="og:url" content="http://0.0.0.0:4000/404.html">
   <meta property="og:image" content="http://0.0.0.0:4000/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -33,13 +40,13 @@
     "name": "Codnapp",
     "url": "http://0.0.0.0:4000/",
     "logo": "http://0.0.0.0:4000/assets/img/logo.png",
-    "description": "Codnapp, üretim yapan işletmeler için MES (Üretim Yürütme Sistemi) ve projeye özel endüstriyel yazılım geliştirir.",
+    "description": "Codnapp, üretim sahasından gelen verileri anlamlı ve kullanılabilir bilgilere dönüştüren MES ve endüstriyel yazılım çözümleri geliştirir.",
     "sameAs": ["https://www.linkedin.com/company/codnapp/"]
   }
   </script>
 </head>
 <body>
-  <a class="skip" href="#icerik">Ana içeriğe geç</a>
+  <a class="skip" href="#main-content">Ana içeriğe geç</a>
 
   <header class="site-header" data-header>
     <div class="wrap header-row">
@@ -47,26 +54,37 @@
         <img class="brand-logo" src="/assets/img/logo.png" alt="Codnapp" width="173" height="38">
       </a>
 
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="ana-menu" data-nav-toggle>
-        <span class="nav-toggle-bars" aria-hidden="true"></span>
-        <span class="sr-only">Menüyü aç/kapat</span>
-      </button>
-
-      <nav id="ana-menu" class="nav" aria-label="Ana menü" data-nav>
+      <nav id="main-menu" class="nav" aria-label="Ana menü" data-nav>
         <a href="#urunler">Ürünler</a>
         <a href="#neden">Neden Codnapp</a>
         <a href="#ekip">Biz</a>
         <a class="nav-cta" href="#iletisim">İletişim</a>
       </nav>
+
+      <div class="lang-switch" role="group" aria-label="Dil seçimi" data-lang-switch
+           data-ids-tr="urunler,neden,ekip,iletisim"
+           data-ids-en="products,why-codnapp,about,contact">
+        <a href="/" lang="tr" hreflang="tr" data-lang="tr" title="Türkçe" aria-label="Türkçe" aria-current="true">TR</a>
+        <a href="/en/" lang="en" hreflang="en" data-lang="en" title="English" aria-label="English">EN</a>
+      </div>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-menu" data-nav-toggle>
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="sr-only">Menüyü aç/kapat</span>
+      </button>
     </div>
   </header>
 
-  <main id="icerik">
+  <main id="main-content">
     <section class="section">
   <div class="wrap">
     <h1 class="h1-small">Aradığınız sayfa bulunamadı.</h1>
     <p class="lead">Adres değişmiş ya da yanlış yazılmış olabilir.</p>
     <p><a class="btn btn-primary" href="/">Ana sayfaya dön</a></p>
+    <hr style="border:0;border-top:1px solid var(--line);margin:2rem 0">
+    <h2 class="h1-small" lang="en">Page not found.</h2>
+    <p class="lead" lang="en">The address may have changed or been mistyped.</p>
+    <p><a class="btn btn-ghost" href="/en/" lang="en">Back to the home page</a></p>
   </div>
 </section>
 

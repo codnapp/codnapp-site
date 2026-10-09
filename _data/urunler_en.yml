@@ -1,0 +1,51 @@
+# Products (English). Same structure as urunler.yml; only the texts are translated.
+# Order, images and sizes should be kept in sync with urunler.yml.
+- ad: codnapp
+  vurgu: Core
+  slogan: "Develop and manage your microservices, screens and OPC connections on a single core platform."
+  paragraflar:
+    - "CodnappCore is a flexible application platform where microservices and user interfaces are developed and managed, and where OPC connections to industrial systems are established."
+    - "Without being limited by the ready-made structures of no-code and low-code platforms, you can build processes and applications tailored to your needs."
+    - "You can also speed up code production with AI-assisted development tools, making development faster and more efficient. Let AI write your code, and stay in control."
+  tip: galeri
+  dipnot: "Screenshots use representative data."
+  gorseller:
+    - src: /assets/img/urunler/codnapp-core-1.webp
+      w: 1400
+      h: 707
+      alt: "codnappCore management screen: services and code editor"
+    - src: /assets/img/urunler/codnapp-core-2.webp
+      w: 1400
+      h: 773
+      alt: "codnappCore screen: machine dashboard with hourly production, downtime and scrap charts"
+    - src: /assets/img/urunler/codnapp-core-3.webp
+      w: 1400
+      h: 657
+      alt: "codnappCore screen: line dashboard with machine speed chart, coil list and order details"
+    - src: /assets/img/urunler/codnapp-core-4.webp
+      w: 1400
+      h: 656
+      alt: "codnappCore screen: metallizer lines production dashboard with OEE and downtime breakdown"
+- ad: codnapp
+  vurgu: Connect
+  aciklama: "Securely and without interruption, it connects the devices and systems on your shop floor over OPC UA and integrates them with the central platform."
+  gorsel: /assets/img/urunler/opc-ua.png
+  w: 584
+  h: 114
+  alt: "OPC UA logo"
+  tip: logo
+- ad: codnapp
+  vurgu: Mobile
+  slogan: "Your production, with you anytime, anywhere."
+  aciklama: "Monitor your entire production floor in real time from your mobile devices. Your custom-built app is published on the iOS and Android stores under the name and brand you choose."
+  tip: mobil
+  dipnot: "Screenshots use representative data."
+  gorseller:
+    - src: /assets/img/urunler/codnapp-mobile-1.webp
+      alt: "codnappMobile production screen: OEE, availability, performance and quality indicators"
+    - src: /assets/img/urunler/codnapp-mobile-2.webp
+      alt: "codnappMobile quality screen: quality checkpoints and customer complaints table"
+    - src: /assets/img/urunler/codnapp-mobile-3.webp
+      alt: "codnappMobile home screen: occupational health and safety, quality and production summary"
+  w: 480
+  h: 1039
