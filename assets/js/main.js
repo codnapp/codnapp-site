@@ -1,6 +1,6 @@
 /* Codnapp - sayfa davranışları:
    1) üst barın kaydırınca gölge alması, 2) mobil menü, 3) aktif bölüm vurgusu,
-   4) ekran görüntüsü galerisi (oklar ve noktalar).
+   4) ekran görüntüsü galerisi (oklar ve noktalar), 5) dil değişince bölüm konumunu koruma.
    JavaScript kapalıysa site yine tam okunur ve çalışır. */
 (function () {
   var header = document.querySelector("[data-header]");
@@ -76,13 +76,16 @@
       i = Math.max(0, Math.min(n - 1, i));
       track.scrollTo({ left: i * track.clientWidth, behavior: reduceMotion ? "auto" : "smooth" });
     }
-    var prev = btn("carousel-btn carousel-prev", "Önceki ekran", chevL);
-    var next = btn("carousel-btn carousel-next", "Sonraki ekran", chevR);
+    var lblPrev = root.getAttribute("data-label-prev") || "Previous";
+    var lblNext = root.getAttribute("data-label-next") || "Next";
+    var lblDot = root.getAttribute("data-label-dot") || "%n / %t";
+    var prev = btn("carousel-btn carousel-prev", lblPrev, chevL);
+    var next = btn("carousel-btn carousel-next", lblNext, chevR);
     var dotWrap = document.createElement("div");
     dotWrap.className = "carousel-dots";
     for (var i = 0; i < n; i++) {
       (function (k) {
-        var d = btn("carousel-dot", "Ekran " + (k + 1) + " / " + n);
+        var d = btn("carousel-dot", lblDot.replace("%n", k + 1).replace("%t", n));
         d.addEventListener("click", function () { go(k); });
         dotWrap.appendChild(d); dots.push(d);
       })(i);
@@ -109,4 +112,24 @@
     window.addEventListener("resize", update);
     update();
   });
+  /* 5) Dil değiştirince, bakılan bölümün karşılığına git */
+  var sw = document.querySelector("[data-lang-switch]");
+  if (sw) {
+    sw.addEventListener("click", function (e) {
+      var a = e.target.closest("a[data-lang]");
+      if (!a) return;
+      var cur = document.documentElement.lang || "tr", tgt = a.getAttribute("data-lang");
+      if (cur === tgt || window.scrollY < 120) return;
+      var from = (sw.getAttribute("data-ids-" + cur) || "").split(",");
+      var to = (sw.getAttribute("data-ids-" + tgt) || "").split(",");
+      var idx = -1;
+      from.forEach(function (id, i) {
+        var el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top < window.innerHeight * 0.4) idx = i;
+      });
+      if (idx < 0 || !to[idx]) return;
+      e.preventDefault();
+      window.location.href = a.href + "#" + to[idx];
+    });
+  }
 })();

@@ -85,8 +85,8 @@ section[id]{scroll-margin-top:calc(var(--header-h) + 8px)}
   .site-header{background:rgba(255,255,255,.82);-webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px)}
 }
 .site-header.is-scrolled{box-shadow:0 6px 24px rgba(5,41,77,.12);background:rgba(255,255,255,.96)}
-.header-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:var(--header-h);flex-wrap:wrap}
-.brand{display:inline-flex;align-items:center;text-decoration:none;flex:none}
+.header-row{display:flex;align-items:center;justify-content:flex-start;gap:1rem;min-height:var(--header-h);flex-wrap:wrap}
+.brand{display:inline-flex;align-items:center;text-decoration:none;flex:none;margin-right:auto}
 .brand-logo{display:block;height:38px;width:auto;transition:height .2s ease}
 .site-header.is-scrolled .brand-logo{height:32px}
 .nav{display:flex;align-items:center;gap:1.75rem}
@@ -97,6 +97,12 @@ section[id]{scroll-margin-top:calc(var(--header-h) + 8px)}
 .nav a.is-active{color:var(--brand)}
 .nav .nav-cta{background:var(--brand);color:#fff;padding:.55rem 1.1rem;border-radius:var(--radius)}
 .nav .nav-cta:hover{background:var(--brand-mid);color:#fff}
+/* Dil seçici (TR | EN) */
+.lang-switch{display:inline-flex;flex:none;margin-left:1.25rem;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff}
+.lang-switch a{display:block;min-width:2.5rem;padding:.5rem .55rem;font-size:.82rem;font-weight:600;line-height:1;letter-spacing:.05em;text-align:center;text-decoration:none;color:var(--muted)}
+.lang-switch a + a{border-left:1px solid var(--line)}
+.lang-switch a:hover{color:var(--brand);background:var(--tint)}
+.lang-switch a[aria-current="true"]{background:var(--brand);color:#fff}
 .nav a.nav-cta.is-active{color:#fff}
 
 /* Mobil menü düğmesi (yalnızca JavaScript varsa ve dar ekranda görünür) */
@@ -248,6 +254,7 @@ h1{font-size:clamp(2.6rem,5.4vw,4.1rem);line-height:1.02}
   .brand-logo{height:34px}
   .site-header.is-scrolled .brand-logo{height:30px}
   .js .nav-toggle{display:inline-flex}
+  .lang-switch{margin-left:.5rem}
   .js .nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:.5rem 1.5rem 1.25rem;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 18px 30px rgba(5,41,77,.14)}
   .js .site-header.nav-open .nav{display:flex}
   .js .nav a{padding:.9rem 0;border-bottom:1px solid var(--line);font-size:1.05rem}
